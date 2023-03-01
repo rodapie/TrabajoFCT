@@ -299,6 +299,7 @@ function alumnos() {
     alumnosa.forEach(alumno => {
       
       const fila = document.createElement("tr");
+      fila.setAttribute("id",'row'+i);
       fila.innerHTML =
         `<tr> 
         <td id='Nombre${i}'       >${alumno.nombre}</td>
@@ -323,8 +324,9 @@ function alumnos() {
     let i = 2;
     alumnosa.forEach(alumno => {
       
-      const fila = document.createElement("tr");
-      fila.innerHTML =
+      const fila2 = document.createElement("tr");
+      fila2.setAttribute("id",'row'+i);
+      fila2.innerHTML =
         `<tr> 
         <td id='Nombre${i}'       >${alumno.nombre}</td>
         <td id='Apellidos${i}'    >${alumno.apellidos}</td>
@@ -338,7 +340,7 @@ function alumnos() {
         <td id='FCT${i}'          >${alumno.fct}</td>
         <td id='Observaciones${i}' >${alumno.observaciones}</td>
         <td><input type='button' id='edit_button${i}' value='📝' class='edit' onclick='edit_row(${i})'> <input type='button' id='save_button${i}' value='💾' class='save' onclick='save_row(${i})' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(${i})'><a href="alPepelu.html"><input type='button'  value='🤓'></a> </td></tr>`;
-      document.querySelector("#data").appendChild(fila);
+      document.querySelector("#data").appendChild(fila2);
       i++;
 
     })

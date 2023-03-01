@@ -1,7 +1,14 @@
-
+let bdd = window.localStorage
 let alumnosAaron = [];
 let alumnosFrancisco = [];
 
+if(bdd.getItem("aaron")){
+  alumnosAaron = JSON.parse(bdd.getItem("aaron"));
+}
+
+if(bdd.getItem("francisco")){
+  alumnosFrancisco = JSON.parse(bdd.getItem("francisco"));
+}
 //Busqueda
 function filtro() {
   var input, filter, table, tr, td, i, txtValue;
@@ -163,7 +170,7 @@ function add_row() {
     "observaciones": new_obs
 
   }
-  bdd = window.localStorage
+  
   if (window.location.href.includes("Aaron")) {
     alumnosAaron.push(obj);
     bdd.setItem("aaron", JSON.stringify(alumnosAaron));

@@ -1,5 +1,5 @@
 document.querySelector("#new_dias").innerHTML = document.querySelector("table").rows.length + 1;
-
+let bdd = window.localStorage;
 function edit_row(no) {
     console.log(no);
     console.log("edit_button" + no);
@@ -36,6 +36,23 @@ tareasCamilo = [];
 tareasMiguel = [];
 tareasRoyce = [];
 tareasPepelu = [];
+
+if(bdd.getItem("tareasRoyce")){
+    tareasRoyce = JSON.parse(bdd.getItem("tareasRoyce"));
+}
+
+if(bdd.getItem("tareasRoyce")){
+    tareasCamilo = JSON.parse(bdd.getItem("tareasCamilo"));
+}
+
+if(bdd.getItem("tareasRoyce")){
+    tareasMiguel = JSON.parse(bdd.getItem("tareasMiguel"));
+}
+
+if(bdd.getItem("tareasRoyce")){
+    tareasPepelu = JSON.parse(bdd.getItem("tareasPepelu"));
+}
+
 function add_row() {
     var new_dias = document.getElementById("new_dias").value;
     var new_actividades = document.getElementById("new_actividades").value;
@@ -65,17 +82,17 @@ function add_row() {
         horas: new_horas,
         nombre: nombre
     }
-    var bdd = window.localStorage;
+
     var nombre;
     if (window.location.href.includes("Royce")) {
         nombre = "royce";
         tareasRoyce.push(actividadesObj)
         bdd.setItem("tareasRoyce", JSON.stringify(tareasRoyce));
-    } else if (window.location.href.includes("epelu")) {
+    } else if (window.location.href.includes("Pepelu")) {
         nombre = "pepelu";
         tareasPepelu.push(actividadesObj)
         bdd.setItem("tareasPepelu", JSON.stringify(tareasPepelu));
-    } else if (window.location.href.includes("iguel")) {
+    } else if (window.location.href.includes("Miguel")) {
         nombre = "miguel"
         tareasMiguel.push(actividadesObj)
         bdd.setItem("tareasMiguel", JSON.stringify(tareasMiguel));
@@ -212,11 +229,11 @@ function tareasNuevas() {
             fila.innerHTML =
                 `<tr> 
                 <td>${document.querySelector("table").rows.length - 1}</td>
-                <td id='actividades_row${i + 2}'>${dia.actividades}</td>
-                <td id='observaciones_row${i + 2}'>${dia.observaciones}</td>
-                <td id='horas_row${i + 2}'>${dia.horas}</td>
+                <td id='actividades_row${i+2}'>${dia.actividades}</td>
+                <td id='observaciones_row${i+2}'>${dia.observaciones}</td>
+                <td id='horas_row${i+2}'>${dia.horas}</td>
                 
-                <td><input type='button' id='edit_button${i + 2}' value='📝' class='edit' onclick='edit_row(${i + 2})'> <input type='button' id='save_button${i + 2}' value='💾' class='save' onclick='save_row(${i + 2})' style='display:none' > </tr>`
+                <td><input type='button' id='edit_button${i+2}' value='📝' class='edit' onclick='edit_row(${i+2})'> <input type='button' id='save_button${i+2}' value='💾' class='save' onclick='save_row(${i+2})' style='display:none' > </tr>`
             document.querySelector("#data").appendChild(fila);
             i++;
 

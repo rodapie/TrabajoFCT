@@ -62,6 +62,8 @@ function edit_row(no) {
   dualhtml.innerHTML = "<input type='text' id='dual_text" + no + "' value='" + dual + "'>";
   fcthtml.innerHTML = "<input type='text' id='fct_text" + no + "' value='" + fct + "'>";
   obshtml.innerHTML = "<input type='text' id='observaciones_text" + no + "' value='" + obs + "'>";
+
+ 
 }
 
 //Guardar
@@ -92,8 +94,8 @@ function save_row(no) {
 
   document.getElementById("edit_button" + no).style.display = "inline";
   document.getElementById("save_button" + no).style.display = "none";
-}
 
+}
 //Borrar
 function delete_row(no) {
   
@@ -255,7 +257,7 @@ function cargarJson() {
                 <td id='Dual0'         >${profesor.alumnos[0].dual}</td>
                 <td id='FCT0'          >${profesor.alumnos[0].fct}</td>
                 <td id='Observaciones0'>${profesor.alumnos[0].observacionesp}</td>
-                <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(0)'><a href="alRoyce.html"><input type='button'  value='🤓'></a> </tr>`
+                <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(0)'><a href="alRoyce.html"><input type='button'  value='🤓'></a></td></tr>`
                 document.querySelector('#data').appendChild(row);
               
               
@@ -264,18 +266,18 @@ function cargarJson() {
                 const row2 = document.createElement("tr");
                 row2.setAttribute("id",'row1');
                 row2.innerHTML = `<tr> 
-                <td id='Nombre1'       >${profesor.alumnos[1].nombre}</td>
-                <td id='Apellidos1'    >${profesor.alumnos[1].apellidos}</td>
-                <td id='Contraseña1'   >${profesor.alumnos[1].contraseña}</td>
-                <td id='DNI1'          >${profesor.alumnos[1].dni}</td>
-                <td id='Nacimiento1'   >${profesor.alumnos[1].nacimiento}</td>
-                <td id='Email1'        >${profesor.alumnos[1].email}</td>
-                <td id='Telefono1'     >${profesor.alumnos[1].telefono}</td>
-                <td id='Empresa1'      >${profesor.alumnos[1].empresa}</td>
-                <td id='Dual1'         >${profesor.alumnos[1].dual}</td>
-                <td id='FCT1'          >${profesor.alumnos[1].fct}</td>
-                <td id='Observaciones1'>${profesor.alumnos[1].observacionesp}</td>
-                <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(1)'><a href="alPepelu.html"><input type='button'  value='🤓'></a> </tr>`
+                <td id='Nombre1'       > ${profesor.alumnos[1].nombre}</td>
+                <td id='Apellidos1'    > ${profesor.alumnos[1].apellidos}</td>
+                <td id='Contraseña1'   > ${profesor.alumnos[1].contraseña}</td>
+                <td id='DNI1'          > ${profesor.alumnos[1].dni}</td>
+                <td id='Nacimiento1'   > ${profesor.alumnos[1].nacimiento}</td>
+                <td id='Email1'        > ${profesor.alumnos[1].email}</td>
+                <td id='Telefono1'     > ${profesor.alumnos[1].telefono}</td>
+                <td id='Empresa1'      > ${profesor.alumnos[1].empresa}</td>
+                <td id='Dual1'         > ${profesor.alumnos[1].dual}</td>
+                <td id='FCT1'          > ${profesor.alumnos[1].fct}</td>
+                <td id='Observaciones1'> ${profesor.alumnos[1].observacionesp}</td>
+                <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(1)'><a href="alPepelu.html"><input type='button'  value='🤓'></a></td></tr>`
                 document.querySelector('#data').appendChild(row2);
               
             }
@@ -309,15 +311,15 @@ function alumnos() {
         <td id='Empresa${i}'      >${alumno.empresa}</td>
         <td id='Dual${i}'         >${alumno.dual}</td>
         <td id='FCT${i}'          >${alumno.fct}</td>
-        <td id='Observaciones${i} >${alumno.observaciones}</td>
-        <td><input type='button' id='edit_button${i}' value='📝' class='edit' onclick='edit_row(${i})'> <input type='button' id='save_button${i}' value='💾' class='save' onclick='save_row(${i})' style='display:none' ><a href="alPepelu.html"><input type='button' value='🗑️' class='delete' onclick='delete_row(${i})'><input type='button'  value='🤓'></a> </tr>`;
+        <td id='Observaciones${i}' >${alumno.observaciones}</td>
+        <td><input type='button' id='edit_button${i}' value='📝' class='edit' onclick='edit_row(${i})'> <input type='button' id='save_button${i}' value='💾' class='save' onclick='save_row(${i})' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(${i})'><a href="alPepelu.html"><input type='button'  value='🤓'></a> </td></tr>`;
       document.querySelector("#data").appendChild(fila);
       i++;
 
     })
 
   } else if (window.location.href.includes("Francisco")) {
-    var alumnosb = JSON.parse(localStorage.getItem("francisco"));
+    var alumnosa = JSON.parse(localStorage.getItem("francisco"));
     let i = 2;
     alumnosa.forEach(alumno => {
       
@@ -334,8 +336,8 @@ function alumnos() {
         <td id='Empresa${i}'      >${alumno.empresa}</td>
         <td id='Dual${i}'         >${alumno.dual}</td>
         <td id='FCT${i}'          >${alumno.fct}</td>
-        <td id='Observaciones${i}>${alumno.observaciones}</td>
-        <td><input type='button' id='edit_button${i}' value='📝' class='edit' onclick='edit_row(${i})'> <input type='button' id='save_button${i}' value='💾' class='save' onclick='save_row(${i})' style='display:none' ><a href="alPepelu.html"><input type='button' value='🗑️' class='delete' onclick='delete_row(${i})'><input type='button'  value='🤓'></a> </tr>`;
+        <td id='Observaciones${i}' >${alumno.observaciones}</td>
+        <td><input type='button' id='edit_button${i}' value='📝' class='edit' onclick='edit_row(${i})'> <input type='button' id='save_button${i}' value='💾' class='save' onclick='save_row(${i})' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(${i})'><a href="alPepelu.html"><input type='button'  value='🤓'></a> </td></tr>`;
       document.querySelector("#data").appendChild(fila);
       i++;
 

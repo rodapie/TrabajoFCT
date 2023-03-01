@@ -213,7 +213,7 @@ function cargarJson() {
                   <td id='Dual0'      >${profesor.alumnos[0].dual}</td>
                   <td id='FCT0'       >${profesor.alumnos[0].fct}</td>
                   <td id='Observaciones0'>${profesor.alumnos[0].observacionesp}</td>
-                  <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(0)'><a href="alMiguel.html"><input type='button'  value='🤓'></a> </tr>`
+                  <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><a href="alMiguel.html"><input type='button'  value='🤓'></a> </tr>`
             document.querySelector('#data').appendChild(row);
 
 
@@ -235,7 +235,7 @@ function cargarJson() {
                    <td id='Dual1'>${profesor.alumnos[1].dual}</td>
                    <td id='FCT1'>${profesor.alumnos[1].fct}</td>
                    <td id='Observaciones1'>${profesor.alumnos[1].observacionesp}</td>
-                   <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(1)'><a href="alCamilo.html"><input type='button'  value='🤓'></a> </tr>`
+                   <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><a href="alCamilo.html"><input type='button'  value='🤓'></a> </tr>`
             document.querySelector('#data').appendChild(row2);
 
 

@@ -170,8 +170,9 @@ function tareasNuevas() {
 
     if (window.location.href.includes("Royce")) {
         var tareasNuevasRoyce = JSON.parse(localStorage.getItem("tareasRoyce"));
+        let i = 0;
         tareasNuevasRoyce.forEach(dia => {
-
+            
             const fila = document.createElement("tr");
             fila.innerHTML =
                 `<tr> 
@@ -182,11 +183,13 @@ function tareasNuevas() {
                 
                 <td><input type='button' id='edit_button${i + 2}' value='📝' class='edit' onclick='edit_row(${i + 2})'> <input type='button' id='save_button${i + 2}' value='💾' class='save' onclick='save_row(${i + 2})' style='display:none' > </tr>`
             document.querySelector("#data").appendChild(fila);
+            i++;
 
         })
 
     } else if (window.location.href.includes("Pepelu")) {
         var tareasNuevasPepelu = JSON.parse(localStorage.getItem("tareasPepelu"));
+        let i = 0;
         tareasNuevasPepelu.forEach(dia => {
             const fila = document.createElement("tr");
             fila.innerHTML =
@@ -198,10 +201,12 @@ function tareasNuevas() {
                 
                 <td><input type='button' id='edit_button${i + 2}' value='📝' class='edit' onclick='edit_row(${i + 2})'> <input type='button' id='save_button${i + 2}' value='💾' class='save' onclick='save_row(${i + 2})' style='display:none' > </tr>`
             document.querySelector("#data").appendChild(fila);
+            i++;
 
         })
     } else if (window.location.href.includes("Miguel")) {
         var tareasNuevasMiguel = JSON.parse(localStorage.getItem("tareasMiguel"));
+        let i = 0;
         tareasNuevasMiguel.forEach(dia => {
             const fila = document.createElement("tr");
             fila.innerHTML =
@@ -213,10 +218,12 @@ function tareasNuevas() {
                 
                 <td><input type='button' id='edit_button${i + 2}' value='📝' class='edit' onclick='edit_row(${i + 2})'> <input type='button' id='save_button${i + 2}' value='💾' class='save' onclick='save_row(${i + 2})' style='display:none' > </tr>`
             document.querySelector("#data").appendChild(fila);
+            i++;
 
         })
     } else if (window.location.href.includes("Camilo")) {
         var tareasNuevasCamilo = JSON.parse(localStorage.getItem("tareasCamilo"));
+        let i = 0;
         tareasNuevasCamilo.forEach(dia => {
             const fila = document.createElement("tr");
             fila.innerHTML =
@@ -228,6 +235,7 @@ function tareasNuevas() {
                 
                 <td><input type='button' id='edit_button${i + 2}' value='📝' class='edit' onclick='edit_row(${i + 2})'> <input type='button' id='save_button${i + 2}' value='💾' class='save' onclick='save_row(${i + 2})' style='display:none' > </tr>`
             document.querySelector("#data").appendChild(fila);
+            i++;
 
         })
     }

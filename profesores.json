@@ -6,7 +6,7 @@
                 {
                     "nombre": "Miguel",
                     "apellidos": "Sanchez",
-                    "contrase単a": "alumno4",
+                    "contrasena": "alumno4",
                     "dni": "123456789",
                     "nacimiento": "1/1/1111",
                     "email": "miguel@alumno.com",
@@ -40,7 +40,7 @@
                 {
                     "nombre": "Camisa",
                     "apellidos": "Sanchez",
-                    "contrase単a": "alumno3",
+                    "contrasena": "alumno3",
                     "dni": "123456789",
                     "nacimiento": "2/1/1111",
                     "email": "camisa@alumno.com",
@@ -79,7 +79,7 @@
                 {
                     "nombre": "Manu",
                     "apellidos": "Royce",
-                    "contrase単a": "alumno1",
+                    "contrasena": "alumno1",
                     "dni": "123456789",
                     "nacimiento": "1/1/1111",
                     "email": "manuel@alumno.com",
@@ -113,7 +113,7 @@
                 {
                     "nombre": "Juan",
                     "apellidos": "Pe",
-                    "contrase単a": "alumno2",
+                    "contrasena": "alumno2",
                     "dni": "123456789",
                     "nacimiento": "2/1/1111",
                     "email": "pepelu@alumno.com",

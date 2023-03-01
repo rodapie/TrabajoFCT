@@ -204,7 +204,7 @@ function cargarJson() {
             row.innerHTML = `<tr>
                   <td id='Nombre0'    >${profesor.alumnos[0].nombre}</td>
                   <td id='Apellidos0' >${profesor.alumnos[0].apellidos}</td>
-                  <td id='Contraseña0'>${profesor.alumnos[0].contraseña}</td>
+                  <td id='Contraseña0'>${profesor.alumnos[0].contrasena}</td>
                   <td id='DNI0'       >${profesor.alumnos[0].dni}</td>
                   <td id='Nacimiento0'>${profesor.alumnos[0].nacimiento}</td>
                   <td id='Email0'     >${profesor.alumnos[0].email}</td>
@@ -226,7 +226,7 @@ function cargarJson() {
                 
                    <td id='Nombre1'>${profesor.alumnos[1].nombre}</td>
                    <td id='Apellidos1'>${profesor.alumnos[1].apellidos}</td>
-                   <td id='Contraseña1'>${profesor.alumnos[1].contraseña}</td>
+                   <td id='Contraseña1'>${profesor.alumnos[1].contrasena}</td>
                    <td id='DNI1'>${profesor.alumnos[1].dni}</td>
                    <td id='Nacimiento1'>${profesor.alumnos[1].nacimiento}</td>
                    <td id='Email1'>${profesor.alumnos[1].email}</td>
@@ -250,7 +250,7 @@ function cargarJson() {
               row.innerHTML = `<tr> 
                 <td id='Nombre0'       >${profesor.alumnos[0].nombre}</td>
                 <td id='Apellidos0'    >${profesor.alumnos[0].apellidos}</td>
-                <td id='Contraseña0'   >${profesor.alumnos[0].contraseña}</td>
+                <td id='Contraseña0'   >${profesor.alumnos[0].contrasena}</td>
                 <td id='DNI0'          >${profesor.alumnos[0].dni}</td>
                 <td id='Nacimiento0'   >${profesor.alumnos[0].nacimiento}</td>
                 <td id='Email0'        >${profesor.alumnos[0].email}</td>
@@ -270,7 +270,7 @@ function cargarJson() {
               row2.innerHTML = `<tr> 
                 <td id='Nombre1'       > ${profesor.alumnos[1].nombre}</td>
                 <td id='Apellidos1'    > ${profesor.alumnos[1].apellidos}</td>
-                <td id='Contraseña1'   > ${profesor.alumnos[1].contraseña}</td>
+                <td id='Contraseña1'   > ${profesor.alumnos[1].contrasena}</td>
                 <td id='DNI1'          > ${profesor.alumnos[1].dni}</td>
                 <td id='Nacimiento1'   > ${profesor.alumnos[1].nacimiento}</td>
                 <td id='Email1'        > ${profesor.alumnos[1].email}</td>

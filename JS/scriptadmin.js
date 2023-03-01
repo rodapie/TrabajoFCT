@@ -351,7 +351,7 @@ function inicializar() {
   cargarJson();
   setTimeout(() => {
     alumnos();
-  }, 100)
+  }, 200)
 }
 
 inicializar();

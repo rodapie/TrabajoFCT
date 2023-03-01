@@ -263,7 +263,7 @@ function inicializar() {
     cargarJson();
     setTimeout(() => {
         tareasNuevas();
-    }, 100)
+    }, 200)
 
 }
 inicializar();

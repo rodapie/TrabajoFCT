@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profesor: Francisco</title>
+  <link rel="stylesheet" href="CSS/styletablas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="index.html" class="logo"><img src="Static/logo.png"></a>
+    <div class="busca">  <p>Busca de alumno por nombre: </p><input class="search" type="text" id="myInput" onkeyup="filtro()" placeholder="Nombre de alumno" title="Type in a name"></div>
+    <div class="derecha"><p>Tutor: Francisco</p><a href="index.html"><i id="logout" class="fas fa-sign-out-alt" style="font-size:30px"></i></a><p>Empresas</p><a href="empresas.html"><i id="logout" class='fa fa-building'></i></a></div>
+
+  </header>
+
+    <div id="wrapper">
+      <table cellspacing=2 cellpadding=5 id="data_table">
+        <tbody id="data">
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Contraseña</th>
+            <th>DNI</th>
+            <th>Nacimiento</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Empresa</th>
+            <th>Dual</th>
+            <th>FCT</th>
+            <th>Observaciones</th>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td><input type="text" id="new_nombre"></td>
+            <td><input type="text" id="new_apellidos"></td>
+            <td><input type="text" id="new_ontraseña"></td>
+            <td><input type="text" id="new_dni"></td>
+            <td><input type="text" id="new_nacimiento"></td>
+            <td><input type="text" id="new_email"></td>
+            <td><input type="text" id="new_telefono"></td>
+            <td><input type="text" id="new_empresa"></td>
+            <td><input type="text" id="new_dual"></td>
+            <td><input type="text" id="new_fct"></td>
+            <td><input type="text" id="new_observacionesp"></td>
+            <td><input type="button" class="add" onclick="add_row();" value="➕"></td>
+            
+         </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+  </html>
+  <script src="JS/scriptadmin.js"></script>
+
+</body>
+
+</html>
+
+<!-- hola -->

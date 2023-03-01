@@ -1,5 +1,5 @@
 
-let alumnosAaron=[];
+let alumnosAaron = [];
 let alumnosFrancisco = [];
 
 //Busqueda
@@ -18,7 +18,7 @@ function filtro() {
       } else {
         tr[i].style.display = "none";
       }
-    }       
+    }
   }
 }
 
@@ -63,7 +63,7 @@ function edit_row(no) {
   fcthtml.innerHTML = "<input type='text' id='fct_text" + no + "' value='" + fct + "'>";
   obshtml.innerHTML = "<input type='text' id='observaciones_text" + no + "' value='" + obs + "'>";
 
- 
+
 }
 
 //Guardar
@@ -98,9 +98,9 @@ function save_row(no) {
 }
 //Borrar
 function delete_row(no) {
-  
-    document.getElementById("row"+no).remove();
-    
+
+  document.getElementById("row" + no).remove();
+
 }
 
 //Añadir
@@ -118,25 +118,25 @@ function add_row() {
   var new_obs = document.getElementById("new_observacionesp").value;
 
   var table = document.getElementById("data_table");
-  var table_len = (table.rows.length)-1;
-  table.insertRow(table_len).outerHTML = 
-  "<tr id='row" + table_len + "'>"+
-  "<td id='Nombre" +table_len+"'>"+new_nombre+"</td>"+
-  "<td id='Apellidos" +table_len+"'>"+new_apellidos+"</td>"+
-  "<td id='Contraseña" +table_len+"'>"+new_contraseña+"</td>"+
-  "<td id='DNI" +table_len+"'>"+new_dni+"</td>"+
-  "<td id='Nacimiento" +table_len+"'>"+new_nacimiento+"</td>"+
-  "<td id='Email" +table_len+"'>"+new_email+"</td>"+
-  "<td id='Telefono" +table_len+"'>"+new_telefono+"</td>"+
-  "<td id='Empresa" +table_len+"'>"+new_emp+"</td>"+
-  "<td id='Dual" +table_len+"'>"+new_dual+"</td>"+
-  "<td id='FCT" +table_len+"'>"+new_fct+"</td>"+
-  "<td id='Observaciones" +table_len+"'>"+new_obs+"</td>"+
-  "<td><input type='button' id='edit_button" + table_len + "' value='📝' class='edit' onclick='edit_row(" + table_len + ")'>"+
-  "<input type='button' id='save_button" + table_len + "' value='💾' class='save' onclick='save_row(" + table_len + ")'>"+
-  "<input type='button' value='🗑️' class='delete' onclick='delete_row(" + table_len + ")'>"+
-  "<input type='button' value='🤓' class='ver'></td></tr>";
-  
+  var table_len = (table.rows.length) - 1;
+  table.insertRow(table_len).outerHTML =
+    "<tr id='row" + table_len + "'>" +
+    "<td id='Nombre" + table_len + "'>" + new_nombre + "</td>" +
+    "<td id='Apellidos" + table_len + "'>" + new_apellidos + "</td>" +
+    "<td id='Contraseña" + table_len + "'>" + new_contraseña + "</td>" +
+    "<td id='DNI" + table_len + "'>" + new_dni + "</td>" +
+    "<td id='Nacimiento" + table_len + "'>" + new_nacimiento + "</td>" +
+    "<td id='Email" + table_len + "'>" + new_email + "</td>" +
+    "<td id='Telefono" + table_len + "'>" + new_telefono + "</td>" +
+    "<td id='Empresa" + table_len + "'>" + new_emp + "</td>" +
+    "<td id='Dual" + table_len + "'>" + new_dual + "</td>" +
+    "<td id='FCT" + table_len + "'>" + new_fct + "</td>" +
+    "<td id='Observaciones" + table_len + "'>" + new_obs + "</td>" +
+    "<td><input type='button' id='edit_button" + table_len + "' value='📝' class='edit' onclick='edit_row(" + table_len + ")'>" +
+    "<input type='button' id='save_button" + table_len + "' value='💾' class='save' onclick='save_row(" + table_len + ")'>" +
+    "<input type='button' value='🗑️' class='delete' onclick='delete_row(" + table_len + ")'>" +
+    "<input type='button' value='🤓' class='ver'></td></tr>";
+
   document.getElementById("new_nombre").value = "";
   document.getElementById("new_apellidos").value = "";
   document.getElementById("new_contraseña").value = "";
@@ -148,31 +148,31 @@ function add_row() {
   document.getElementById("new_dual").value = "";
   document.getElementById("new_fct").value = "";
   document.getElementById("new_observacionesp").value = "";
-  
-  obj ={
-      "nombre" : new_nombre,
-      "apellidos" : new_apellidos,
-      "contraseña" : new_contraseña,
-      "dni" : new_dni,
-      "nacimiento" : new_nacimiento,
-      "email" : new_email,
-      "telefono" : new_telefono,
-      "empresa" : new_emp,
-      "dual" : new_dual,
-      "fct" : new_fct,
-      "observaciones" : new_obs
+
+  obj = {
+    "nombre": new_nombre,
+    "apellidos": new_apellidos,
+    "contraseña": new_contraseña,
+    "dni": new_dni,
+    "nacimiento": new_nacimiento,
+    "email": new_email,
+    "telefono": new_telefono,
+    "empresa": new_emp,
+    "dual": new_dual,
+    "fct": new_fct,
+    "observaciones": new_obs
 
   }
   bdd = window.localStorage
-  if(window.location.href.includes("Aaron")){
+  if (window.location.href.includes("Aaron")) {
     alumnosAaron.push(obj);
-    bdd.setItem("aaron",JSON.stringify(alumnosAaron));
-  }else{
+    bdd.setItem("aaron", JSON.stringify(alumnosAaron));
+  } else {
     alumnosFrancisco.push(obj);
-    bdd.setItem("francisco",JSON.stringify(alumnosFrancisco));
+    bdd.setItem("francisco", JSON.stringify(alumnosFrancisco));
   }
 
- 
+
   actualizar();
 }
 
@@ -182,24 +182,19 @@ function add_row() {
 function cargarJson() {
   document.querySelector("table").rows.length
   var data = document.querySelector("#data")
-  fetch('https://raw.githubusercontent.com/Chicago-Melimpio/alumnosProfes/main/profesores.json')
+  fetch('https://raw.githubusercontent.com/rodapie/TrabajoFCT/main/profesores.json')
     .then(response => response.json())
     .then(data => {
 
-      // -----------------------------------------------------------------
-
-
-
-      // -----------------------------------------------------------------
       data.profesores.forEach(profesor => {
         console.log(profesor)
         if (profesor.nombre == "Aaron") {
-          
+
           if (window.location.href.includes("Aaron")) {
-            
-              const row = document.createElement("tr");
-              row.setAttribute("id",'row0');
-              row.innerHTML = `<tr>
+
+            const row = document.createElement("tr");
+            row.setAttribute("id", 'row0');
+            row.innerHTML = `<tr>
                   <td id='Nombre0'    >${profesor.alumnos[0].nombre}</td>
                   <td id='Apellidos0' >${profesor.alumnos[0].apellidos}</td>
                   <td id='Contraseña0'>${profesor.alumnos[0].contraseña}</td>
@@ -212,15 +207,15 @@ function cargarJson() {
                   <td id='FCT0'       >${profesor.alumnos[0].fct}</td>
                   <td id='Observaciones0'>${profesor.alumnos[0].observacionesp}</td>
                   <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(0)'><a href="alMiguel.html"><input type='button'  value='🤓'></a> </tr>`
-              document.querySelector('#data').appendChild(row);
-            
-            
-                
-                
-                 const row2 = document.createElement("tr");
-                 console.log("Se ha creado a camilo");
-                 row2.setAttribute("id",'row1');
-                 row2.innerHTML = `<tr> 
+            document.querySelector('#data').appendChild(row);
+
+
+
+
+            const row2 = document.createElement("tr");
+            console.log("Se ha creado a camilo");
+            row2.setAttribute("id", 'row1');
+            row2.innerHTML = `<tr> 
                 
                    <td id='Nombre1'>${profesor.alumnos[1].nombre}</td>
                    <td id='Apellidos1'>${profesor.alumnos[1].apellidos}</td>
@@ -234,18 +229,18 @@ function cargarJson() {
                    <td id='FCT1'>${profesor.alumnos[1].fct}</td>
                    <td id='Observaciones1'>${profesor.alumnos[1].observacionesp}</td>
                    <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(1)'><a href="alCamilo.html"><input type='button'  value='🤓'></a> </tr>`
-                 document.querySelector('#data').appendChild(row2);
-            
-                
-            }
-          } else {
+            document.querySelector('#data').appendChild(row2);
+
+
+          }
+        } else {
+          if (window.location.href.includes("Francisco")) {
             if (window.location.href.includes("Francisco")) {
-              if (window.location.href.includes("Francisco")) {
-              
-             
-                const row = document.createElement("tr");
-                row.setAttribute("id",'row0');
-                row.innerHTML = `<tr> 
+
+
+              const row = document.createElement("tr");
+              row.setAttribute("id", 'row0');
+              row.innerHTML = `<tr> 
                 <td id='Nombre0'       >${profesor.alumnos[0].nombre}</td>
                 <td id='Apellidos0'    >${profesor.alumnos[0].apellidos}</td>
                 <td id='Contraseña0'   >${profesor.alumnos[0].contraseña}</td>
@@ -258,14 +253,14 @@ function cargarJson() {
                 <td id='FCT0'          >${profesor.alumnos[0].fct}</td>
                 <td id='Observaciones0'>${profesor.alumnos[0].observacionesp}</td>
                 <td><input type='button' id='edit_button0' value='📝' class='edit' onclick='edit_row(0)'> <input type='button' id='save_button0' value='💾' class='save' onclick='save_row(0)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(0)'><a href="alRoyce.html"><input type='button'  value='🤓'></a></td></tr>`
-                document.querySelector('#data').appendChild(row);
-              
-              
-             
-              
-                const row2 = document.createElement("tr");
-                row2.setAttribute("id",'row1');
-                row2.innerHTML = `<tr> 
+              document.querySelector('#data').appendChild(row);
+
+
+
+
+              const row2 = document.createElement("tr");
+              row2.setAttribute("id", 'row1');
+              row2.innerHTML = `<tr> 
                 <td id='Nombre1'       > ${profesor.alumnos[1].nombre}</td>
                 <td id='Apellidos1'    > ${profesor.alumnos[1].apellidos}</td>
                 <td id='Contraseña1'   > ${profesor.alumnos[1].contraseña}</td>
@@ -278,28 +273,25 @@ function cargarJson() {
                 <td id='FCT1'          > ${profesor.alumnos[1].fct}</td>
                 <td id='Observaciones1'> ${profesor.alumnos[1].observacionesp}</td>
                 <td><input type='button' id='edit_button1' value='📝' class='edit' onclick='edit_row(1)'> <input type='button' id='save_button1' value='💾' class='save' onclick='save_row(1)' style='display:none' ><input type='button' value='🗑️' class='delete' onclick='delete_row(1)'><a href="alPepelu.html"><input type='button'  value='🤓'></a></td></tr>`
-                document.querySelector('#data').appendChild(row2);
-              
+              document.querySelector('#data').appendChild(row2);
+
             }
           }
-          }
-        })
+        }
+      })
 
     });
 }
 
 function alumnos() {
-  // var tareasNuevas = JSON.parse(localStorage.getItem("tareaAlumno"));
-  // console.log(tareasNuevas)
 
-  // tareasNuevas.forEach(alumno => {
   if (window.location.href.includes("Aaron")) {
     var alumnosa = JSON.parse(localStorage.getItem("aaron"));
     let i = 2;
     alumnosa.forEach(alumno => {
-      
+
       const fila = document.createElement("tr");
-      fila.setAttribute("id",'row'+i);
+      fila.setAttribute("id", 'row' + i);
       fila.innerHTML =
         `<tr> 
         <td id='Nombre${i}'       >${alumno.nombre}</td>
@@ -323,9 +315,9 @@ function alumnos() {
     var alumnosa = JSON.parse(localStorage.getItem("francisco"));
     let i = 2;
     alumnosa.forEach(alumno => {
-      
+
       const fila2 = document.createElement("tr");
-      fila2.setAttribute("id",'row'+i);
+      fila2.setAttribute("id", 'row' + i);
       fila2.innerHTML =
         `<tr> 
         <td id='Nombre${i}'       >${alumno.nombre}</td>
@@ -344,15 +336,15 @@ function alumnos() {
       i++;
 
     })
-  } 
-// })
-  
+  }
+
+
 }
-function inicializar(){
+function inicializar() {
   cargarJson();
-  setTimeout(()=>{
+  setTimeout(() => {
     alumnos();
-},100)
+  }, 100)
 }
 
 inicializar();
